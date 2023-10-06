@@ -17,7 +17,7 @@ The app utilizes Nextjs, React, CSS, node.js to deliver a user-friendly and visu
 
 ## Screenshots
 
-![screenshot of page](./public/screenshot.png)
+![screenshot of page](./public/screenshott.png)
 
 ## Installation
 
@@ -27,9 +27,9 @@ Start the app using npm run dev.
 Open your browser and navigate to http://localhost:3000
 
 ## Future Directions
-1. **Add navbar and Footer
-2. **Search Functionality can be added 
-3. **User Authentication
+1. Add navbar and Footer
+2. Search Functionality can be added 
+3. User Authentication
 
 ## License
 
