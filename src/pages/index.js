@@ -1,23 +1,13 @@
-
 import Link from 'next/link';
-import styles from './index.module.css'; 
+import styles from '../../components/ProductCard.module.css';
+import { fetchProducts } from '../../utils/api';
+import ProductCard from '../../components/ProductCard';
 
 const Home = ({ products }) => {
   return (
-    <div className={styles.productList}> {/* Apply the CSS class */}
+    <div className={styles.productList}>
       {products.map((product) => (
-        <div className={styles.productCard} key={product.id}>
-          <img
-            src={product.thumbnail}
-            alt={product.title}
-            className={styles.productImage}
-          />
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <Link href={`/product/${product.id}`}>
-            <a className={styles.productDetailsButton}>Product Details</a> {/* Apply the new CSS class */}
-          </Link>
-        </div>
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
@@ -25,17 +15,8 @@ const Home = ({ products }) => {
 
 export async function getStaticProps() {
   try {
-    const response = await fetch('https://dummyjson.com/products');
-
-    if (!response.ok) {
-      throw new Error('API request failed');
-    }
-
-    const data = await response.json();
-    const products = data.products; // Access the "products" array
-
-    // Log the products to inspect the data
-    console.log('Fetched products:', products);
+    // Fetch products using the API function
+    const products = await fetchProducts();
 
     return {
       props: { products },
@@ -43,7 +24,7 @@ export async function getStaticProps() {
   } catch (error) {
     console.error('Error fetching products:', error);
     return {
-      props: { products: [] }, 
+      props: { products: [] },
     };
   }
 }

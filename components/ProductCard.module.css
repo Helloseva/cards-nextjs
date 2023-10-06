@@ -5,7 +5,8 @@
 }
 
 .productCard {
-  flex-basis: calc(31.31% - 10px);
+  position: relative;
+  flex-basis: calc(32.31% - 10px);
   border: 2px solid black;
   padding: 20px;
   margin: 10px;
@@ -21,7 +22,13 @@
   box-shadow: 0 0 20px rgba(230, 21, 119, 1);
 }
 
-
+.buttonContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
 
 .productDetailsButton {
   display: inline-block;
@@ -52,6 +59,15 @@
   margin-bottom: 10px;
 }
 
+.descriptionContainer {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.productDescription {
+  font-size: 14px;
+}
+
 .productCard h2 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -66,54 +82,6 @@
   color: blue;
 }
 
-/* productDetail.module.css */
-.centeredContainer {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Make the container full viewport height */
-}
-
-.productDetail {
-  border: 2px solid black;
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
-  height: 600px;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 400px;
-}
-
-.productCardone {
-  border: 2px solid black;
-  padding: 20px;
-  margin: 10px;
-  box-sizing: border-box;
-  text-align: center;
-  height: 600px;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 400px;
-
-}
-
-.productDetail img {
-  max-width: 100%;
-  max-height: 100%;
-  margin-bottom: 10px;
-}
-
-.productDetail h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.productDetail p {
-  font-size: 14px;
-}
-
-
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .productList {
@@ -123,5 +91,12 @@
 
   .productCard {
     flex-basis: 100%;
+  }
+
+  .buttonContainer {
+    position: relative; 
+    bottom: auto;
+    width: auto;
+    margin-top: 10px; 
   }
 }

@@ -1,34 +1,21 @@
 import Link from 'next/link';
-import styles from '../index.module.css'; 
+import ProductDetailCard from '../../../components/ProductDetailCard';
+import { fetchProductById, fetchProducts } from '../../../utils/api';
 
 const ProductDetail = ({ product }) => {
   return (
-    <div className={styles.centeredContainer}>
-
-    <div className={styles.productDetail}> {/* Apply the CSS class */}
-      <img
-        src={product.thumbnail}
-        alt={product.title}
-        className={styles.cardImage}
-      />
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <Link href="/">
-        <a className={styles.productDetailsButton}>Back to Home</a> {/* Apply the new CSS class */}
-      </Link>
-    </div> 
+    <div>
+      <ProductDetailCard product={product} /> {/* Use the ProductDetailCard component */}
     </div>
- 
   );
 };
 
 export async function getStaticPaths() {
-  // Fetch product IDs from the API
-  const response = await fetch('https://dummyjson.com/products');
-  const products = await response.json();
+  // Fetch product IDs from the API to generate paths
+  const products = await fetchProducts();
 
   // Generate paths for each product
-  const paths = products.products.map((product) => ({
+  const paths = products.map((product) => ({
     params: { id: product.id.toString() },
   }));
 
@@ -36,13 +23,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // Fetch the specific product using the ID from the API
-  const response = await fetch(`https://dummyjson.com/products/${params.id}`);
-  const product = await response.json();
+  try {
+    // Fetch the specific product using the API function
+    const product = await fetchProductById(params.id);
 
-  return {
-    props: { product },
-  };
+    return {
+      props: { product },
+    };
+  } catch (error) {
+    console.error(`Error fetching product with ID ${params.id}:`, error);
+    return {
+      props: { product: null },
+    };
+  }
 }
 
 export default ProductDetail;
