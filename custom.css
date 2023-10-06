@@ -1,0 +1,11 @@
+:root {
+    --gradient-card-featured-border: linear-gradient(
+      90deg,
+      rgba(51, 51, 51, 1),
+      rgba(30, 30, 30, 1)
+    );
+    --gradient-card-featured-bg: linear-gradient(white, white);
+    --shadow-card-standart: 0 0 20px rgba(0, 0, 0, 0.12);
+    --shadow-card-featured: 0 0 20px rgba(230, 21, 119, 1);
+  }
+  
