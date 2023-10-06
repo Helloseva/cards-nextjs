@@ -3,18 +3,22 @@ import styles from '../index.module.css';
 
 const ProductDetail = ({ product }) => {
   return (
-    <div className={styles.productCardone}> {/* Apply the CSS class */}
+    <div className={styles.centeredContainer}>
+
+    <div className={styles.productDetail}> {/* Apply the CSS class */}
       <img
         src={product.thumbnail}
         alt={product.title}
-        className={styles.productImage}
+        className={styles.cardImage}
       />
       <h2>{product.title}</h2>
       <p>{product.description}</p>
       <Link href="/">
         <a className={styles.productDetailsButton}>Back to Home</a> {/* Apply the new CSS class */}
       </Link>
+    </div> 
     </div>
+ 
   );
 };
 
