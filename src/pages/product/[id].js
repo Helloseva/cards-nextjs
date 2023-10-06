@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../index.module.css'; // Import the CSS module from the parent directory
+import styles from '../index.module.css'; 
 
 const ProductDetail = ({ product }) => {
   return (

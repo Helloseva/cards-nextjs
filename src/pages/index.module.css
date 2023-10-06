@@ -1,99 +1,109 @@
-/* For pages/index.js */
 .productList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.productCard {
+  flex-basis: calc(33.33% - 20px);
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+.productCardone {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 400px;
+
+}
+
+.productDetailsButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #618264;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.productDetailsButton:hover {
+  background-color: #445D48;
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.productCard img {
+  max-width: 90%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.productCard h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.productCard p {
+  font-size: 14px;
+}
+
+.link {
+  text-decoration: none;
+  color: blue;
+}
+
+/* For pages/product/[id].js */
+.productDetail {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.productDetail img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.productDetail h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.productDetail p {
+  font-size: 14px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .productList {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .productCard {
-    flex-basis: calc(33.33% - 20px);
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    height: 450px; /* Adjust the height here */
-    border-radius: 10px; /* Add rounded corners */
-  overflow: hidden; /* Ensure images don't overflow */
+    flex-basis: 100%;
+  }
+}
 
-  }
-  
-  .productCardone {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    height: 550px;
-    border-radius: 10px; 
-    overflow: hidden; 
-    max-width: 400px; /* Adjust the max-width as needed */
-    
-  }
-  
-  .productDetailsButton {
-    display: inline-block;
-    padding: 10px 20px; /* Adjust padding as needed */
-    background-color: #618264; /* Set your desired button color */
-    color: #fff; /* Set text color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* Add a smooth hover effect */
-  }
-
-  .productDetailsButton:hover {
-    background-color: #445D48; /* Adjust the hover color */
-  }
-
-  .productImage {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .productCard img {
-    max-width: 90%;
-    height: 250px;
-    margin-bottom: 10px;
-  }
-  
-  .productCard h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .productCard p {
-    font-size: 14px;
-  }
-  
-  .link {
-    text-decoration: none;
-    color: blue;
-  }
-  
-  /* For pages/product/[id].js */
-  .productDetail {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .productDetail img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .productDetail h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .productDetail p {
-    font-size: 14px;
-  }
-  
- 

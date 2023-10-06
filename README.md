@@ -7,7 +7,7 @@ This is nextjs app Using dummy API and fetching products and render them on the 
 
 ## Link
 
-deployed at: 
+deployed at: https://nextjs-cards.netlify.app/
 
 ## Description
 
@@ -17,7 +17,7 @@ The app utilizes Nextjs, React, CSS, node.js to deliver a user-friendly and visu
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/fQ293tm/image.png)
+![screenshot of page](./public/screenshot.png)
 
 ## Installations
 

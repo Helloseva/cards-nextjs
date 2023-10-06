@@ -1,7 +1,6 @@
-// pages/index.js (formerly page.js)
 
 import Link from 'next/link';
-import styles from './index.module.css'; // Import the CSS module
+import styles from './index.module.css'; 
 
 const Home = ({ products }) => {
   return (
@@ -44,7 +43,7 @@ export async function getStaticProps() {
   } catch (error) {
     console.error('Error fetching products:', error);
     return {
-      props: { products: [] }, // Provide a default value or handle the error as needed
+      props: { products: [] }, 
     };
   }
 }
